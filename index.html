@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Document PWA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div class="qr">
+    <div class="qr-content">
+      <div class="qr-choice">
+        <div class="qr-choice__logo">
+          <img src="img/logo.svg" alt="">
+        </div>
+        <div class="qr-choice__text">Выберите страну:</div>
+        <div class="qr-choice__btns">
+          <div class="qr-choice__btns--item js-item">
+            <span class="active">Россия</span>
+          </div>
+          <div class="qr-choice__btns--item js-item">
+            <span>Казахстан</span>
+          </div>
+        </div>
+        <a href="/brands/nestogen" class="qr-choice__link js-link">Перейти →</a>
+      </div>
+    </div>
+    <div class="qr-footer">
+      <img class="qr-footer__pic" src="img/semiround.svg" alt="">
+      <div class="qr-footer__text">
+        <p class="qr-footer__text--item">ВАЖНОЕ ЗАМЕЧАНИЕ: Мы&nbsp;считаем, что грудное вскармливание является идеальным началом питания для младенцев, и&nbsp;полностью поддерживаем рекомендацию Всемирной организации здравоохранения об&nbsp;исключительно грудном вскармливании в&nbsp;течение первых шести месяцев жизни с&nbsp;последующим введением адекватного питательного прикорма вместе с&nbsp;продолжением грудного вскармливания до&nbsp;двухлетнего возраста.</p>
+        <p class="qr-footer__text--item">Детское молочко Nestogen<sup class="reg">&reg;</sup> 3&nbsp;для детей старше 12&nbsp;месяцев, детское молочко Nestogen<sup class="reg">&reg;</sup> 4&nbsp;для детей старше 18&nbsp;месяцев разработаны с&nbsp;учётом пищевых потребностей здоровых детей и&nbsp;не&nbsp;должны применяться для кормления детей более раннего возраста. Перед применением продуктов необходимо проконсультироваться со&nbsp;специалистом.</p>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered:', registration);
+                    })
+                    .catch(error => {
+                        console.error('Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+    <script>
+      // importScripts("https://api.mindbox.ru/scripts/service-worker.js");
+    </script>
+</body>
+</html>
